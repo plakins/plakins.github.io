@@ -1,1 +1,0 @@
-# plakinsm.github.io
