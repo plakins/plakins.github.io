@@ -44,7 +44,7 @@
     const readableStream = mediaStreamToReadableStream(mediaStream, 100);
     const roomId = Math.floor(Math.random() * 1000);
     document.getElementById('room').innerText = roomId;
-    fetch(`http://188.235.130.102:8080/${roomId}`, {
+    fetch(`https://ppng.io/${roomId}`, {
       method: 'POST',
       body: readableStream,
       allowHTTP1ForStreamingUpload: true,
