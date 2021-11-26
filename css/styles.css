@@ -29,10 +29,13 @@ header {
 	width: 100%;
 }
 
-header a {
+header button {
 	position: absolute;
 	top: 2em;
 	right: 2em;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
 }
 
 header h1 {
@@ -88,7 +91,7 @@ td p {
 
 
 @media print {
-	header a {
+	header {
 		display: none;
 	}
 }
