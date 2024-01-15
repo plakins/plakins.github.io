@@ -110,6 +110,7 @@ function animateOnAppear(
     });
 }
 const projectsBlocks = document.querySelectorAll('.projects__block');
+const projectsBlocksTails = document.querySelectorAll('.projects__block .tail');
 
 document.addEventListener('scroll', () => {
     projectsBlocks.forEach((block, index) => {
@@ -117,11 +118,14 @@ document.addEventListener('scroll', () => {
             const opacity = percentage < 0.5 ? 0 : 1;
 
             const isMobile = window.innerWidth < 768;
-            const mobileTransform = `translateY(${percentage < 0.5 ? 25 : 0}px)`;
+            const mobileTransform = `translateY(${percentage < 0.5 ? '1.5em' : 0})`;
             const desktopTransform =
                 index % 2 === 0
-                    ? `translateX(-${percentage < 0.5 ? 25 : 0}px)`
-                    : `translateX(${percentage < 0.5 ? 25 : 0}px)`;
+                    ? `translateX(${percentage < 0.5 ? '1.5em' : 0})`
+                    : `translateX(-${percentage < 0.5 ? '1.5em' : 0})`;
+
+            (projectsBlocksTails[index] as HTMLElement).style.width =
+                percentage < 0.5 ? '0' : '1.5em';
 
             return {
                 transform: isMobile ? mobileTransform : desktopTransform,
